@@ -4,7 +4,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="flex">
-      <div>© 2021 Hamster Powered Studios</div>
+      <div className="m-auto font-medium">© 2021 Hamster Powered Studios</div>
 
       <Link href="/" className="">
         <a className="font-bold text-xl text-white">

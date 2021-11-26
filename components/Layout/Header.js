@@ -27,15 +27,16 @@ const Header = ({ home, title }) => {
       <header className="bg-blue-200">
         <div>
           {home ? (
-            <div className={`${styles.header} rounded-xl z-20`}>
+            <div className={`${styles.header} z-20`}>
               <Image
                 priority
-                src="/images/plasmaorb.png"
+                src="/images/HamsterPoweredStudioTmp.png"
                 height={144}
                 width={144}
                 alt={siteTitle}
+                className="rounded-full"
               />
-              <h1>{siteTitle}</h1>
+              <h1 className="text-3xl m-3 font-serif">{siteTitle}</h1>
             </div>
           ) : (
             <div className={styles.header}>

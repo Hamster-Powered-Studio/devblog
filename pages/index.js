@@ -21,13 +21,13 @@ export default function Home({ allPostsData }) {
           </h2>
         </div>
         <section>
-          <h2>Blog</h2>
+          <h2 className="text-3xl font-semibold mb-7">Posts</h2>
           <ul>
             {allPostsData.map(({ id, date, title }) => {
               return (
-                <li key={id}>
+                <li className="my-2" key={id}>
                   <Link href={`/posts/${id}`}>
-                    <a>{title}</a>
+                    <a className="font-semibold hover:text-blue-500">{title}</a>
                   </Link>
                   <br/>
                   <small><Date dateString={date}/></small>
