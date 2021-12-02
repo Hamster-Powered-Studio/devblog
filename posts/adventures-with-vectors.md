@@ -17,6 +17,6 @@ We can represent them with a series of values:
 {10, 0, 43, 20, 323}
 
 
-#### Unit Vectors
+### Unit Vectors
 A unit vector is a vector which is represented in 0 - 1 space. This means that we have stripped the scale part out of our vector, giving us a pure direction.
 For example, a vector of {38, 0, 0} would become {1, 0, 0}. Both of these vectors point the same way, but the unit vector always has a length of 1, whereas the original vector would have a length of 38.
