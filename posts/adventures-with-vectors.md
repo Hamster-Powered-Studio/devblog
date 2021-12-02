@@ -11,10 +11,11 @@ So basically, it turns out that these are *really* useful. I've been dabbling in
 
 When it all boils down, a vector is just an ordered set of numbers. If we boil it a little less, they are a construct of coordinates generally representing a direction, multiplied by a scale. We can use vectors across any number of dimensions, and the operations we use on them still work. For this blog post, I will mostly be looking at vectors in 3D space.
 
-We can represent them with a series of values: 
-{3, 0, 1}
-{2, 0}
-{10, 0, 43, 20, 323}
+We can represent them with a series of values:  
+{3, 0, 1}  
+{2, 0}  
+{10, 0, 43, 20, 323}  
+  
 
 
 ### Unit Vectors
