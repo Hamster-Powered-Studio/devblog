@@ -14,3 +14,4 @@ Some notable included libraries are:
 - PostCSS
 - Remark
 - Gray Matter
+- react-icons
