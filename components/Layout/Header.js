@@ -39,21 +39,22 @@ const Header = ({ home, title }) => {
               <h1 className="text-3xl m-3 font-serif">{siteTitle}</h1>
             </div>
           ) : (
-            <div className={styles.header}>
+            <div className={`${styles.header} z-20`}>
               <Link href="/">
                 <a>
                   <Image
                     priority
-                    src="/images/plasmaorb.png"
+                    src="/images/HamsterPoweredStudioTmp.png"
                     height={144}
                     width={144}
                     alt={siteTitle}
+                    className="rounded-full"
                   />
                 </a>
               </Link>
               <h2>
                 <Link href="/">
-                  <a>{siteTitle}</a>
+                  <a className="text-3xl m-3 font-serif">{siteTitle}</a>
                 </Link>
               </h2>
             </div>
