@@ -5,7 +5,7 @@ import styles from "./Header.module.css";
 export const siteTitle = "Hamster Powered DevBlog";
 
 //TODO: add new toggled view for home view + styling
-const Header = ({ home, title }) => {
+const Header = ({ home, title }: { home?: boolean; title: string }) => {
   return (
     <>
       <Head>
