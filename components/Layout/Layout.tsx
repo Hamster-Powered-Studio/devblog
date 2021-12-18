@@ -1,7 +1,10 @@
 import Header from "./Header";
 import Footer from "./Footer";
-import SideBar, { sbArgs } from "../SideBar";
-import { GiAbstract001, GiAbstract027 } from "react-icons/gi";
+import SideBar, { sbArgs } from "./SideBar";
+import { GiAbstract027 } from "react-icons/gi";
+import { BiBox } from "react-icons/bi";
+import { FaGamepad } from "react-icons/fa";
+import { FcAbout } from "react-icons/fc";
 
 const sidebarItems: sbArgs[] = [
   {
@@ -12,9 +15,21 @@ const sidebarItems: sbArgs[] = [
   },
   {
     id: 2,
-    icon: GiAbstract001,
+    icon: BiBox,
     text: "Blog Posts",
     link: "/posts",
+  },
+  {
+    id: 3,
+    icon: FcAbout,
+    text: "About Us",
+    link: "/about",
+  },
+  {
+    id: 4,
+    icon: FaGamepad,
+    text: "Our Games",
+    link: "/games",
   },
 ];
 

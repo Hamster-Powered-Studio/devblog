@@ -16,7 +16,7 @@ export async function getStaticProps() {
 export default function Home({ allPostsData }) {
   return (
     <>
-      <Layout home title="Hamster Powered DevBlog">
+      <Layout title="Hamster Powered DevBlog">
         <div>
           <h2 className="text-center font-sans font-bold">
             Recent Posts

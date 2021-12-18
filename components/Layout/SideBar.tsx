@@ -12,7 +12,7 @@ export type sbArgs = {
 const SideBar = ({ arr }: { arr: sbArgs[] }) => {
   return (
     <div
-      className="fixed top-0 left-0 h-screen w-20 m-0 
+      className="fixed left-0 h-auto w-20 m-0 py-5 rounded-r-3xl
       flex flex-col shadow-lg
       bg-discord_primary text-discord_secondary"
     >

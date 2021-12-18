@@ -24,8 +24,24 @@ const Header = ({ home, title }: { home?: boolean; title: string }) => {
         <meta name="twitter:card" content="summary_large_image" />
         <title>{title}</title>
       </Head>
-      <header className="bg-blue-200">
+      <header className="bg-blue-200 py-2">
         <div>
+          <div className="container flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full">
+            <Link href="/">
+              <a className="text-3xl">HPS</a>
+            </Link>
+            <div>
+              <Link href="/games">
+                <a className="">Games</a>
+              </Link>
+              <Link href="/posts">
+                <a className="">Posts</a>
+              </Link>
+              <Link href="/about">
+                <a className="">About</a>
+              </Link>
+            </div>
+          </div>
           {home ? (
             <div className={`${styles.header} z-20`}>
               <Image

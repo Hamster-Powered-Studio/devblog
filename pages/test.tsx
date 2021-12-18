@@ -1,4 +1,4 @@
-import SideBar from "../components/SideBar";
+import SideBar from "../components/Layout/SideBar";
 import { GiAbstract027 } from "react-icons/gi";
 
 const test = () => {
