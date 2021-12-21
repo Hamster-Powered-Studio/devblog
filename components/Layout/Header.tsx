@@ -5,7 +5,7 @@ import styles from "./Header.module.css";
 export const siteTitle = "Hamster Powered DevBlog";
 
 //TODO: add new toggled view for home view + styling
-const Header = ({ home, title }) => {
+const Header = ({ home, title }: { home?: boolean; title: string }) => {
   return (
     <>
       <Head>
@@ -24,9 +24,31 @@ const Header = ({ home, title }) => {
         <meta name="twitter:card" content="summary_large_image" />
         <title>{title}</title>
       </Head>
-      <header className="bg-blue-200">
+      <header className="py-2 bg-orange-200">
         <div>
-          {home ? (
+          <div
+            className="container flex justify-between items-center mx-auto px-8 
+            md:px-14 lg:px-24 w-full
+            font-sans"
+          >
+            <Link href="/">
+              <a className="text-3xl font-extrabold text-gray-700">
+                H<text className="text-orange-500">P</text>S
+              </a>
+            </Link>
+            <div className="hidden md:flex gap-x-12 items-center font-semibold">
+              <Link href="/games">
+                <a className="">Games</a>
+              </Link>
+              <Link href="/posts">
+                <a className="">Posts</a>
+              </Link>
+              <Link href="/about">
+                <a className="">About</a>
+              </Link>
+            </div>
+          </div>
+          {home && (
             <div className={`${styles.header} z-20`}>
               <Image
                 priority
@@ -36,26 +58,7 @@ const Header = ({ home, title }) => {
                 alt={siteTitle}
                 className="rounded-full"
               />
-              <h1 className="text-3xl m-3 font-serif">{siteTitle}</h1>
-            </div>
-          ) : (
-            <div className={styles.header}>
-              <Link href="/">
-                <a>
-                  <Image
-                    priority
-                    src="/images/plasmaorb.png"
-                    height={144}
-                    width={144}
-                    alt={siteTitle}
-                  />
-                </a>
-              </Link>
-              <h2>
-                <Link href="/">
-                  <a>{siteTitle}</a>
-                </Link>
-              </h2>
+              <h1 className="text-3xl m-3 font-mono font-bold">{siteTitle}</h1>
             </div>
           )}
         </div>
