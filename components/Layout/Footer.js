@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-//TODO: styling, linking
+//TODO: styling, linking(FAQ)
 const Footer = () => {
   return (
     <footer className="flex items-center justify-around bg-gray-400 p-8">

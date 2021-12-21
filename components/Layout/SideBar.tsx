@@ -11,7 +11,7 @@ export type sbArgs = {
 
 const SideBar = ({ arr }: { arr: sbArgs[] }) => {
   return (
-    <div
+    <nav
       className="fixed left-0 h-auto w-20 m-0 py-5 rounded-r-3xl
       flex flex-col shadow-lg
       bg-discord_primary text-discord_secondary"
@@ -29,7 +29,7 @@ const SideBar = ({ arr }: { arr: sbArgs[] }) => {
           );
         })}
       </ul>
-    </div>
+    </nav>
   );
 };
 

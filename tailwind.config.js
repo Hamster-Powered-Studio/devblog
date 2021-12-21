@@ -1,4 +1,4 @@
-//const colors=require('tailwindcss/colors')
+const colors = require("tailwindcss/colors");
 
 module.exports = {
   mode: "jit",
@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        orange: colors.orange,
         discord_primary: "#202225",
         discord_secondary: "#5865f2",
       },
