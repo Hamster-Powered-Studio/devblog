@@ -1,13 +1,18 @@
-import parse from "html-react-parser";
+import { MDXRemote } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
+import * as MDXComponents from "../../components/MDX/index";
 import Layout from "../../components/Layout/Layout";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import Head from "next/head";
 import Date from "../../components/Layout/Date";
 
 export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id);
+  const { content, head } = getPostData(params.id);
+  const postData = await serialize(content, { scope: head });
+  //console.log(postData);
   return {
     props: {
+      head,
       postData,
     },
   };
@@ -19,21 +24,23 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
-//TODO: prevent xss injection
-export default function Post({ postData }) {
+//DO NOT PASS USER INPUT INTO MDXRemote
+export default function Post({ head: postHead, postData }) {
   return (
     <Layout>
       <Head>
-        <title>{postData.title}</title>
+        <title>{postHead.title}</title>
       </Head>
       <article>
         <h1 className="leading-4 font-semibold text-3xl tracking-tighter my-1">
-          {postData.title}
+          {postHead.title}
         </h1>
         <div className="text-gray-800 my-3">
-          <Date dateString={postData.date} />
+          <Date dateString={postHead.date} />
         </div>
-        <div>{parse(postData.contentHtml)}</div>
+        <div className="prose dark:prose-invert">
+          <MDXRemote {...postData} components={MDXComponents} />
+        </div>
       </article>
     </Layout>
   );
