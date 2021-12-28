@@ -1,0 +1,29 @@
+---
+title: 'Rendering for Blog Posts'
+date: '2021-12-10'
+author: 'RulerOfCakes'
+---
+
+Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.
+
+- **Static Generation** is the pre-rendering method that generates the HTML at **build time**. The pre-rendered HTML is then _reused_ on each request.
+- **Server-side Rendering** is the pre-rendering method that generates the HTML on **each request**.
+
+Our current blog is using **Static Generation** for most of the posts since we don't have the need for dynamic real-time data _yet_,
+but we did have the need for generating a solid layout on given text post data.  
+
+The initial plan was to use `markdown` syntax to write posts with ease, and then use another js library(`remark`) with **Static Generation** to turn that into
+html from the given posts storage. However, The first problem I encountered was that `markdown` has somewhat limited support for certain situations
+when trying to write in new layouts, and that the default styling for certain html tags often used from the translated markdown was disabled by `Tailwind Preflight`,
+which was being used for better styling outside from the posts page.
+
+As a new solution we currently have decided to go with `mdx`, which is a way of using both `markdown` and `jsx` syntax together.
+This solves the problem for custom styling/designs, and opens up more flexible options for content in the post.
+Although it is a bit more complicated to use, it can still act as a superset of markdown for the most part and just be used as markdown if you want to.
+
+Our current rendering procedure goes like this.
+- Posts are written in mdx format, and can use various jsx components provided in the frontend source.
+- Upon build time, Next.js uses **Static Generation** to generate the post html content by parsing the mdx files with `next-mdx-remote`, a js library for parsing mdx files.
+- Posts can then be accessed via listing from the main/posts page, and each post is given a unique id to access them separately.
+
+<Rainbow>And now, as you can see, it works!</Rainbow>

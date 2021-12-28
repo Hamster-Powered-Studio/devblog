@@ -33,7 +33,7 @@ const Header = ({ home, title }: { home?: boolean; title: string }) => {
           >
             <Link href="/">
               <a className="text-3xl font-extrabold text-gray-700">
-                H<text className="text-orange-500">P</text>S
+                H<span className="text-orange-500">P</span>S
               </a>
             </Link>
             <div className="hidden md:flex gap-x-12 items-center font-semibold">
