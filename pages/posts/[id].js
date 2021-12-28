@@ -37,6 +37,7 @@ export default function Post({ head: postHead, postData }) {
         </h1>
         <div className="text-gray-800 my-3">
           <Date dateString={postHead.date} />
+          <p className="font-medium">{"by " + postHead.author}</p>
         </div>
         <div className="prose dark:prose-invert">
           <MDXRemote {...postData} components={MDXComponents} />
