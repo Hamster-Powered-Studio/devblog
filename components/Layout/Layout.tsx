@@ -43,14 +43,14 @@ const Layout = ({
   title: string;
 }) => {
   return (
-    <>
+    <div className="dark:bg-gray-500 transition-colors duration-300">
       <Header home={home} title={title} />
       <SideBar arr={sidebarItems} />
       <main className="min-h-screen p-5 max-w-xl mt-3 mx-auto mb-6">
         {children}
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 
