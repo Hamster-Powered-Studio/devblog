@@ -27,7 +27,7 @@ const SideBar = ({ arr }: { arr: sbArgs[] }) => {
             onClick={() => {
               setDarkMode(!darkMode);
             }}
-            checked={!darkMode}
+            defaultChecked={!darkMode}
           />
         </li>
         {arr.map((args) => {
