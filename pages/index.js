@@ -1,7 +1,8 @@
-import Date from "../components/Layout/Date";
 import Link from "next/link";
 import Layout from "../components/Layout/Layout";
+import Rainbow from "../components/MDX/Rainbow"
 import { getSortedPostsData } from "../lib/posts";
+import PostList from "../components/Utility/PostList";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -17,25 +18,10 @@ export default function Home({ allPostsData }) {
       <Layout home title="Hamster Powered DevBlog">
         <div>
           <h2 className="text-center font-sans font-bold">
-            YOUVE JUST BEEN VECTORED
+            <Rainbow>Work In Progress</Rainbow>
           </h2>
         </div>
-        <section>
-          <h2 className="text-3xl font-semibold mb-7">Posts</h2>
-          <ul>
-            {allPostsData.map(({ id, date, title }) => {
-              return (
-                <li className="my-2" key={id}>
-                  <Link href={`/posts/${id}`}>
-                    <a className="font-semibold hover:text-blue-500">{title}</a>
-                  </Link>
-                  <br/>
-                  <small><Date dateString={date}/></small>
-                </li>
-              );
-            })}
-          </ul>
-        </section>
+        <PostList postData={allPostsData}/>
       </Layout>
     </>
   );

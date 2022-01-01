@@ -32,10 +32,10 @@ export default function Post({ head: postHead, postData }) {
         <title>{postHead.title}</title>
       </Head>
       <article>
-        <h1 className="leading-4 font-semibold text-3xl tracking-tighter my-1">
+        <h1 className="leading-4 font-semibold text-3xl tracking-tighter my-1 dark:text-white">
           {postHead.title}
         </h1>
-        <div className="text-gray-800 my-3">
+        <div className="text-gray-800 dark:text-gray-300 my-3">
           <Date dateString={postHead.date} />
           <p className="font-medium">{"by " + postHead.author}</p>
         </div>
