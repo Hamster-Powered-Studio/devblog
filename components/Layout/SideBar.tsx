@@ -20,7 +20,7 @@ const SideBar = ({ arr }: { arr: sbArgs[] }) => {
       bg-discord_primary text-discord_secondary"
     >
       <ul className="flex flex-col gap-3 items-center">
-        <li key={0}>
+        <li key={0} className="group">
           <input
             className={styles.toggle}
             type="checkbox"
@@ -29,6 +29,7 @@ const SideBar = ({ arr }: { arr: sbArgs[] }) => {
             }}
             defaultChecked={!darkMode}
           />
+          <span className="sidebar-tooltip group-hover:scale-100">Toggle Dark Mode</span>
         </li>
         {arr.map((args) => {
           return (
