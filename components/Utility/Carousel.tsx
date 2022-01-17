@@ -3,14 +3,21 @@ import React, { useState } from "react";
 import styles from "./Carousel.module.scss";
 
 export interface imageInfo {
-  src: string;
+  src: string | StaticImageData;
   alt: string;
 }
 
-const Carousel = ({ images }: { images: imageInfo[] }) => {
+const Carousel = ({
+  images,
+  width = 600,
+  height = 400,
+}: {
+  images: imageInfo[];
+  width?: number;
+  height?: number;
+}) => {
   const childrenLength = images.length;
-  const width = 2000;
-  const height = 1000;
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const changeSlide = (event: React.SyntheticEvent<HTMLButtonElement>) => {
     if (event.target instanceof HTMLButtonElement) {
@@ -26,8 +33,9 @@ const Carousel = ({ images }: { images: imageInfo[] }) => {
 
   return (
     <section
-      className="relative h-48 w-96"
+      className="relative overflow-hidden bg-slate-200 rounded-lg"
       aria-label="Image Carousel"
+      style={{ width: `${width}px`, height: `${height}px` }}
     >
       <button
         onClick={changeSlide}
@@ -44,17 +52,30 @@ const Carousel = ({ images }: { images: imageInfo[] }) => {
       <ul className="list-none p-0">
         {images.map(({ src, alt }, i) => (
           <li
-            className={`${styles.slide} ${(i === currentSlide ? styles.active : "")}`}
+            className={`${styles.slide} ${
+              i === currentSlide ? styles.active : ""
+            }`}
             key={i}
           >
-            <Image
-              src={src}
-              alt={alt}
-              layout="intrinsic"
-              width={width}
-              height={height}
-              className="block object-cover object-center"
-            />
+            {typeof src !== "string" ? (
+              <Image
+                src={src}
+                alt={alt}
+                layout="intrinsic"
+                className="block object-cover object-center"
+                objectFit="contain"
+              />
+            ) : (
+              <Image
+                src={src}
+                alt={alt}
+                layout="intrinsic"
+                width={width}
+                height={height}
+                className="block object-cover object-center"
+                objectFit="contain"
+              />
+            )}
           </li>
         ))}
       </ul>
