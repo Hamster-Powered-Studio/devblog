@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Carousel.module.scss";
 
 export interface imageInfo {
@@ -19,6 +19,7 @@ const Carousel = ({
   const childrenLength = images.length;
 
   const [currentSlide, setCurrentSlide] = useState(0);
+
   const changeSlide = (event: React.SyntheticEvent<HTMLButtonElement>) => {
     if (event.target instanceof HTMLButtonElement) {
       const cList = (event.target as HTMLButtonElement).classList;
@@ -30,6 +31,16 @@ const Carousel = ({
       console.log("carousel state modified");
     }
   };
+
+  useEffect(() => {
+    const timerId = setInterval(
+      () => setCurrentSlide((state) => (state + 1) % childrenLength),
+      5000
+    );
+    return () => {
+      clearInterval(timerId);
+    };
+  }, [currentSlide, childrenLength]);
 
   return (
     <section
