@@ -12,6 +12,14 @@ const images: imageInfo[] = [
     src: "/images/games/HPES_cover.png",
     alt: "Hamster Powered Elevator Shaft",
   },
+  {
+    src: "/images/games/Bloop_cover.png",
+    alt: "Bloop",
+  },
+  {
+    src: "/images/games/Skyship_cover.png",
+    alt: "Skyship Simulator 2021",
+  }
 ];
 export default function Home({ allPostsData }) {
   return (
@@ -55,6 +63,25 @@ export default function Home({ allPostsData }) {
             game.
           </article>
           <Link href="https://unbansheee.itch.io/hpdm">
+            <a className="text-blue-400">Download Link</a>
+          </Link>
+          <h2 className="text-3xl font-semibold my-7">
+            Bloop
+          </h2>
+          <article>
+          Help Bloop reach his destination with the power of colour!
+          Made for Kiwijam 2021
+          </article>
+          <Link href="https://unbansheee.itch.io/bloop">
+            <a className="text-blue-400">Download Link</a>
+          </Link>
+          <h2 className="text-3xl font-semibold my-7">
+            Skyship Simulator 2021
+          </h2>
+          <article>
+          A small proof of concept project for a physics driven airship flight system utilising vector math
+          </article>
+          <Link href="https://unbansheee.itch.io/airship-simulator-2021">
             <a className="text-blue-400">Download Link</a>
           </Link>
         </section>

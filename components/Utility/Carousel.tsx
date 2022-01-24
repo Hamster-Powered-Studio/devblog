@@ -90,7 +90,9 @@ const Carousel = ({
           </li>
         ))}
       </ul>
+      
     </section>
+    
   );
 };
 

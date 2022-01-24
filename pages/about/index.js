@@ -18,9 +18,12 @@ export default function Home({ allPostsData }) {
             Currently our group consists of three main members:
           </p>
           <p>
-            - Unbanshee: Capable of everything, leader of the group & main designer<br/>
-            - SilverBranch: Blueprint Programmer, UI Designer<br/>
-            - RulerOfCakes: C++ & Bluperint Programmer<br/>
+            <b>Vinnie Gray (Unbansheee) </b> <br/>
+            C++ and Blueprint Programmer, 3D Artist, Holy Deity<br/><br/>
+            <b>SilverBranch</b> <br/>
+            Blueprint Programmer, UI Designer<br/><br/>
+            <b>RulerOfCakes</b> <br/> 
+            C++ & Bluperint Programmer, creator of this website<br/>
           </p>
         </section>
       </Layout>
