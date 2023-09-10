@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React, { useState, useEffect } from "react";
 import styles from "./Carousel.module.scss";
 
