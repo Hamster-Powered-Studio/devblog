@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React, { useState, useEffect } from "react";
 import styles from "./Carousel.module.scss";
 
@@ -28,7 +28,6 @@ const Carousel = ({
           ? (state + childrenLength - 1) % childrenLength
           : (state + 1) % childrenLength
       );
-      console.log("carousel state modified");
     }
   };
 
@@ -72,27 +71,31 @@ const Carousel = ({
               <Image
                 src={src}
                 alt={alt}
-                layout="intrinsic"
                 className="block object-cover object-center"
-                objectFit="contain"
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  objectFit: "contain",
+                }}
               />
             ) : (
               <Image
                 src={src}
                 alt={alt}
-                layout="intrinsic"
                 width={width}
                 height={height}
                 className="block object-cover object-center"
-                objectFit="contain"
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  objectFit: "contain",
+                }}
               />
             )}
           </li>
         ))}
       </ul>
-      
     </section>
-    
   );
 };
 

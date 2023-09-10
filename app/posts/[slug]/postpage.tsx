@@ -1,33 +1,33 @@
+"use client";
+
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-import * as MDXComponents from "../../components/MDX/index";
-import Layout from "../../components/Layout/Layout";
-import { getAllPostIds, getPostData } from "../../lib/posts";
+import * as MDXComponents from "../../../components/MDX/index";
 import Head from "next/head";
-import Date from "../../components/Layout/Date";
+import Date from "../../../components/Layout/Date";
 
-export async function getStaticProps({ params }) {
-  const { content, head } = getPostData(params.id);
-  const postData = await serialize(content, { scope: head });
-  //console.log(postData);
-  return {
-    props: {
-      head,
-      postData,
-    },
-  };
-}
-export async function getStaticPaths() {
-  const paths = getAllPostIds();
-  return {
-    paths,
-    fallback: false,
-  };
-}
+// export async function generateStaticParams() {
+//   const sanityPosts = await client
+//     .fetch(postPathsQuery)
+//     .then((arg) => arg.map((post) => post.params));
+//   const builtinPosts = getAllPostIds();
+//   console.log(sanityPosts.concat(builtinPosts));
+// }
+
 //DO NOT PASS USER INPUT INTO MDXRemote
-export default function Post({ head: postHead, postData }) {
+export default async function PostPage({
+  postHead,
+  postData,
+}: {
+  postHead: Record<string, any>;
+  postData: Awaited<
+    ReturnType<
+      typeof serialize<Record<string, unknown>, Record<string, unknown>>
+    >
+  >;
+}) {
   return (
-    <Layout>
+    <>
       <Head>
         <title>{postHead.title}</title>
       </Head>
@@ -43,6 +43,6 @@ export default function Post({ head: postHead, postData }) {
           <MDXRemote {...postData} components={MDXComponents} />
         </div>
       </article>
-    </Layout>
+    </>
   );
 }

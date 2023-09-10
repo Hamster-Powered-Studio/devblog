@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { IconType } from "react-icons";
@@ -29,7 +31,9 @@ const SideBar = ({ arr }: { arr: sbArgs[] }) => {
             }}
             defaultChecked={!darkMode}
           />
-          <span className="sidebar-tooltip group-hover:scale-100">Toggle Dark Mode</span>
+          <span className="sidebar-tooltip group-hover:scale-100">
+            Toggle Dark Mode
+          </span>
         </li>
         {arr.map((args) => {
           return (
@@ -57,11 +61,9 @@ const SideBarIcon = ({
   link: string;
 }) => {
   return (
-    <Link href={link}>
-      <a className="sidebar-icon group">
-        {icon}
-        <span className="sidebar-tooltip group-hover:scale-100">{text}</span>
-      </a>
+    <Link href={link} className="sidebar-icon group">
+      {icon}
+      <span className="sidebar-tooltip group-hover:scale-100">{text}</span>
     </Link>
   );
 };
