@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React, { useState, useEffect } from "react";
 import styles from "./Carousel.module.scss";
 
@@ -76,8 +76,9 @@ const Carousel = ({
                 style={{
                   maxWidth: "100%",
                   height: "auto",
-                  objectFit: "contain"
-                }} />
+                  objectFit: "contain",
+                }}
+              />
             ) : (
               <Image
                 src={src}
@@ -88,13 +89,13 @@ const Carousel = ({
                 style={{
                   maxWidth: "100%",
                   height: "auto",
-                  objectFit: "contain"
-                }} />
+                  objectFit: "contain",
+                }}
+              />
             )}
           </li>
         ))}
       </ul>
-      
     </section>
   );
 };

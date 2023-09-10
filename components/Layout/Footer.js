@@ -5,16 +5,17 @@ const Footer = () => {
   return (
     <footer className="flex items-center justify-around bg-gray-400 p-8 bg-opacity-80">
       <div className="font-medium text-left">
-        <text>
+        <desc>
           Hamster Powered Studios is a hobby-oriented indie game development
           group.
-        </text>
+        </desc>
 
         <div>
           maintained by{" "}
           <Link
             href="https://github.com/RulerOfCakes"
-            className="font-bold hover:text-blue-900">
+            className="font-bold hover:text-blue-900"
+          >
             @RulerOfCakes
           </Link>
         </div>
