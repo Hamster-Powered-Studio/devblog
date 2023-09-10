@@ -3,12 +3,8 @@
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import * as MDXComponents from "../../../components/MDX/index";
-import Layout from "../../../components/Layout/Layout";
-import { getAllPostIds, getPostData } from "../../../lib/posts";
 import Head from "next/head";
 import Date from "../../../components/Layout/Date";
-import { client } from "../../../sanity/lib/client";
-import { postPathsQuery } from "../../../sanity/lib/queries";
 
 // export async function generateStaticParams() {
 //   const sanityPosts = await client
