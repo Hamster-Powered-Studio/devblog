@@ -20,11 +20,9 @@ import { postPathsQuery } from "../../../sanity/lib/queries";
 
 //DO NOT PASS USER INPUT INTO MDXRemote
 export default async function PostPage({
-  content,
   postHead,
   postData,
 }: {
-  content: string;
   postHead: Record<string, any>;
   postData: Awaited<
     ReturnType<

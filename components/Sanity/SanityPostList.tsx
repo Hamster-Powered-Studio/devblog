@@ -1,5 +1,5 @@
+import type { SanityDocument } from "next-sanity";
 import Link from "next/link";
-import type { SanityDocument } from "@sanity/client";
 
 const SanityPostList = ({ posts = [] }: { posts: SanityDocument[] }) => {
   const title = posts.length === 1 ? `1 Post` : `${posts.length} Posts`;

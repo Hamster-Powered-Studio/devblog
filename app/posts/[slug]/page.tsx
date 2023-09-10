@@ -16,7 +16,7 @@ export default async function PostWrapper({ params }: { params }) {
   const postData = await serialize(content, { scope: postHead });
   return (
     <>
-      <PostPage content={content} postHead={postHead} postData={postData} />
+      <PostPage postHead={postHead} postData={postData} />
     </>
   );
 }
