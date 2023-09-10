@@ -12,8 +12,10 @@ const Footer = () => {
 
         <div>
           maintained by{" "}
-          <Link href="https://github.com/RulerOfCakes">
-            <a className="font-bold hover:text-blue-900">@RulerOfCakes</a>
+          <Link
+            href="https://github.com/RulerOfCakes"
+            className="font-bold hover:text-blue-900">
+            @RulerOfCakes
           </Link>
         </div>
         <div>Copyright © 2021 Hamster Powered Studios</div>

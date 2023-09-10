@@ -57,12 +57,12 @@ const SideBarIcon = ({
   link: string;
 }) => {
   return (
-    <Link href={link}>
-      <a className="sidebar-icon group">
-        {icon}
-        <span className="sidebar-tooltip group-hover:scale-100">{text}</span>
-      </a>
-    </Link>
+    (<Link href={link} className="sidebar-icon group">
+
+      {icon}
+      <span className="sidebar-tooltip group-hover:scale-100">{text}</span>
+
+    </Link>)
   );
 };
 

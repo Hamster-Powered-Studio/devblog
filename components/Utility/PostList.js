@@ -9,8 +9,8 @@ const PostList = ({ postData }) => {
         {postData.map(({ id, date, title, author }) => {
           return (
             <li className="my-2" key={id}>
-              <Link href={`/posts/${id}`}>
-                <a className="font-semibold hover:text-blue-500">{title}</a>
+              <Link href={`/posts/${id}`} className="font-semibold hover:text-blue-500">
+                {title}
               </Link>
 
               <div className="flex justify-between w-fit gap-5 dark:text-gray-300">
