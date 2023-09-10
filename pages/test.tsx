@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Carousel, { imageInfo } from "../components/Utility/Carousel";
 const images: imageInfo[] = [
   {

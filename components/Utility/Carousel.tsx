@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import styles from "./Carousel.module.scss";
 
@@ -72,27 +72,30 @@ const Carousel = ({
               <Image
                 src={src}
                 alt={alt}
-                layout="intrinsic"
                 className="block object-cover object-center"
-                objectFit="contain"
-              />
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  objectFit: "contain"
+                }} />
             ) : (
               <Image
                 src={src}
                 alt={alt}
-                layout="intrinsic"
                 width={width}
                 height={height}
                 className="block object-cover object-center"
-                objectFit="contain"
-              />
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  objectFit: "contain"
+                }} />
             )}
           </li>
         ))}
       </ul>
       
     </section>
-    
   );
 };
 

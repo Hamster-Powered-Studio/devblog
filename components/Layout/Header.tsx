@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./Header.module.css";
 export const siteTitle = "Hamster Powered DevBlog";
@@ -54,7 +54,10 @@ const Header = ({ home, title }: { home?: boolean; title: string }) => {
               width={144}
               alt={siteTitle}
               className="rounded-full"
-            />
+              style={{
+                maxWidth: "100%",
+                height: "auto"
+              }} />
             <h1 className="text-3xl m-3 font-mono font-bold">{siteTitle}</h1>
           </div>
         )}
