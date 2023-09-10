@@ -13,7 +13,6 @@ export default async function Home() {
   const sanityPosts = await sanityFetch<SanityDocument[]>({
     query: postsQuery,
   });
-  console.log(sanityPosts);
   return (
     <>
       <Layout home title="Hamster Powered DevBlog">

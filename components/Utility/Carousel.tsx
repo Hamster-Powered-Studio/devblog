@@ -28,7 +28,6 @@ const Carousel = ({
           ? (state + childrenLength - 1) % childrenLength
           : (state + 1) % childrenLength
       );
-      console.log("carousel state modified");
     }
   };
 
