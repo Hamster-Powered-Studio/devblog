@@ -9,6 +9,10 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: Rule => [
+        Rule.required(),
+        Rule.max(80).warning('Titles that are too long may be truncated in search results'),
+      ]
     }),
     defineField({
       name: 'slug',
@@ -18,12 +22,18 @@ export default defineType({
         source: 'title',
         maxLength: 96,
       },
+      validation: Rule => [
+        Rule.required(),
+      ]
     }),
     defineField({
       name: 'author',
       title: 'Author',
       type: 'reference',
       to: {type: 'author'},
+      validation: Rule => [
+        Rule.required(),
+      ]
     }),
     defineField({
       name: 'mainImage',
@@ -50,11 +60,15 @@ export default defineType({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
+      validation: Rule => [
+        Rule.required(),
+      ]
     }),
     defineField({
       name: 'body',
       title: 'Body',
-      type: 'blockContent',
+      description: 'Write the content of the post here in markdown format.',
+      type: 'markdown',
     }),
   ],
 

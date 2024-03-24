@@ -15,7 +15,7 @@ import Date from "../../../components/Layout/Date";
 // }
 
 //DO NOT PASS USER INPUT INTO MDXRemote
-export default async function PostPage({
+export default function PostPage({
   postHead,
   postData,
 }: {
